@@ -32,17 +32,15 @@ public class RegistrationServlet extends HttpServlet {
     }
 
     private String convertDataToJSON(String fullName, String email,String phonecode,String tel,String job) {
-        StringBuilder jsonData = new StringBuilder();
-        jsonData.append("{");
 
-        jsonData.append("\"fullName\": \""+fullName+"\"");
-        jsonData.append("\"email\": \""+email+"\"");
-        jsonData.append("\"phonecode\": \""+phonecode+"\"");
-        jsonData.append("\"tel\": \""+tel+"\"");
-        jsonData.append("\"email\": \""+job+"\"");
-
-        jsonData.append("}");
-        return jsonData.toString();
+        String jsonData = "{" +
+                "\"fullName\": \"" + fullName + "\"" +
+                "\"email\": \"" + email + "\"" +
+                "\"phonecode\": \"" + phonecode + "\"" +
+                "\"tel\": \"" + tel + "\"" +
+                "\"job\": \"" + job + "\"" +
+                "}";
+        return jsonData;
     }
 
 }

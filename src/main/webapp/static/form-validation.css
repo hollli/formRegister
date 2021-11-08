@@ -3,7 +3,7 @@
   min-width: 100px;
   margin-left: auto;
   margin-top: 5%;
-  margin-right: auto
+  margin-right: auto;
 }
 .input-group {
   position: relative;
@@ -131,8 +131,55 @@
   width: 41px;
 }
 body{
-  background-color: aliceblue;
+
 }
 #result{
-  height: 10px;
+  border-radius: 10px;
+  background-color: white;
+  opacity: 0.5;
+  color: black;
+}
+h1{
+  color: black;
+  text-align: center;
+}
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:3s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  opacity: .9;
+  color: white;
+
+  box-sizing:border-box;
+  left:50%;
+  top: 50%;
+  position:fixed;
+  transform:translate(-50%, -50%);
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
 }
