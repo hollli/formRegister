@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Checkout example · Bootstrap v5.1</title>
+    <link href="form-validation.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function send() {
+            var fullName = $("#fullName").val();
+            var email = $("#email").val();
+            var phonecode = $("#phonecode").val();
+            var tel = $("#tel").val();
+            var job = $("#job").val();
+            $.post("registration", {"fullName": fullName,"email":email,"phonecode": phonecode,"tel": tel,"job": job})
+                .done(function (data) {
+                    alert("Data Loaded: " + data);
+                    $("#result").empty().append(data);
+                });
+        }
+    </script>
+</head>
+<body class="bg-light">
+<div class="container">
+    <main>
+        <div class="row g-5">
+            <div class="col-md-7">
+                <form class="needs-validation" novalidate="">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="fullName" class="form-label"></label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text-1"><img class="imggg" src="значок-персоны-в-плоском-стиле-символ-человека-118611127.jpg"></span>
+                                <input type="text" class="form-control" id="fullName" placeholder="Full name" required="">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="email" class="form-label"></label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text-1"><img class="imggg" src="email.png"></span>
+                                <input type="text" class="form-control" id="email" placeholder="Email address" required="">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="tel" class="form-label"></label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text-1"><img class="imgtel" src="phone.jpg"></span>
+                                <label for="phonecode"></label><select class="form-control" name="phonecode" id="phonecode" >
+
+                                <option>Select code country</option>
+                                <option value="Ukraine">+380</option>
+                                <option value="Afghanistan">+93</option>
+                                <option value="Germany">+49</option>
+                                <option value="Russia">+7</option>
+                                <option value="Uganda">+256</option>
+
+                            </select>
+                                <input type="text" class="form-control" name="tel" id="tel" placeholder="Phone number" required="">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="job" class="form-label"></label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text-1"><img class="imgjob" src="job.png"></span>
+                                <select  class="form-control" name="id" id="job" >
+
+                                    <option>Select job type</option>
+                                    <option value="Home">Home</option>
+                                    <option value="IT">IT</option>
+                                    <option value="Medical">Medical</option>
+                                    <option value="Actor">Actor</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="password" class="form-label"></label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text-1"><img class="imgpassword" src="password.svg"></span>
+                                <input type="text" class="form-control" id="password" placeholder="Password" required="">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="repeatpassword" class="form-label"></label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text-1"><img class="imgpassword" src="password.svg"></span>
+                                <input type="text" class="form-control" id="repeatpassword" placeholder="Repeat password" required="">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn" type="submit">Create Account</button>
+                </form>
+
+            </div>
+        </div>
+        <div id="result"></div>
+    </main>
+</div>
+</body>
+</html>
