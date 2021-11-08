@@ -7,11 +7,18 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript">
         function send() {
+            var pass = document.getElementById('password').value;
+            var repeatpas = document.getElementById('repeatpassword').value;
             var fullName = $("#fullName").val();
             var email = $("#email").val();
             var phonecode = $("#phonecode").val();
             var tel = $("#tel").val();
             var job = $("#job").val();
+            if (pass===repeatpas){
+                alert("Паролі співпали" );
+           }else{
+                alert("Паролі не співпали , повторіть спробу" );
+            }
             $.post("registration", {"fullName": fullName,"email":email,"phonecode": phonecode,"tel": tel,"job": job})
                 .done(function (data) {
                     alert("Data Loaded: " + data);
@@ -89,7 +96,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn" type="submit">Create Account</button>
+                    <input class="btn" type="button" value="Create Account" onclick="send();">
                 </form>
 
             </div>
