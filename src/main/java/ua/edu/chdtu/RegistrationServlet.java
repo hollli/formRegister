@@ -28,17 +28,17 @@ public class RegistrationServlet extends HttpServlet {
         String job = req.getParameter("job");
 
         //TODO implement JSON data
-        resp.getWriter().write("<h1>JSON: " + convertDataToJSON(fullName,email,phonecode,tel,job)+"</h1>");
+        resp.getWriter().write("<h1>JSON: \n" + convertDataToJSON(fullName,email,phonecode,tel,job)+"</h1>");
     }
 
     private String convertDataToJSON(String fullName, String email,String phonecode,String tel,String job) {
 
         String jsonData = "{" +
-                "\"fullName\": \"" + fullName + "\"" +
-                "\"email\": \"" + email + "\"" +
-                "\"phonecode\": \"" + phonecode + "\"" +
-                "\"tel\": \"" + tel + "\"" +
-                "\"job\": \"" + job + "\"" +
+                "\"fullName\": \"" + fullName  +"\"" +  ","+
+                "\"email\": \"" + email  + "\"" + ","+
+                "\"phonecode\": \"" + phonecode  + "\"" + ","+
+                "\"tel\": \"" + tel  + "\"" + ","+
+                "\"job\": \"" + job  + "\"" +
                 "}";
         return jsonData;
     }
